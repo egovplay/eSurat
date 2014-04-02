@@ -1,8 +1,5 @@
 <?php
-	session_start(); 
-	$userid = isset($_SESSION['userid'])?$_SESSION['userid']:0;
-	$usergroup = isset($_SESSION['role'])? $_SESSION['role']:0;
-	$username= isset($_SESSION['nama'])? $_SESSION['nama']:"";
+session_start(); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,11 +14,6 @@
 
 	<script type="text/javascript" src="assets/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/jquery.easyui.min.js"></script>
-	<script type="text/javascript">
-    var userid = <?php echo $userid; ?>;
-    var usergroup = <?php echo $usergroup; ?>;
-    var username = '<?php echo ucfirst($username); ?>';
-    </script>
 	<script type="text/javascript" src="assets/app.js"></script>
 	<meta name="robots" content="noindex, nofollow">
 
@@ -45,7 +37,7 @@
 		
         <div data-options="region:'west',split:true,border:false"  style="width:230px;padding:0px;">
 			<div class="easyui-layout" data-options="fit:true">
-                <div id="x-menu"data-options="region:'north',border:true,collapsible:false,iconCls:'icon-app-menu'" title="Main Menu"style="height:420px">
+                <div id="x-menu"data-options="region:'north',border:true,collapsible:false,iconCls:'icon-app-menu'" title="Main Menu"style="height:400px">
 				 <ul class="easyui-tree">
 					<li data-options="iconCls:'icon-locked'">Main Menu Terkunci
 					</li>
@@ -76,3 +68,14 @@
 
 </body>
 </html>
+<?php
+if(!isset($_SESSION['auth'])) {
+?>
+<script type="text/javascript">
+login();
+</script>
+<?php
+} else {
+
+}
+?>
