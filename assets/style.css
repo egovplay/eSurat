@@ -1,0 +1,19 @@
+#header {
+	height: 60px;
+}
+#sidebar {
+	width: 220px;
+	background: #fff;
+}
+#footer {
+	height: 24px;
+	overflow:hidden;
+}
+#menu {
+	padding: 10px 0;
+}
+#x-toolbar {
+border-color: #99bce8;
+border-width: 1px;
+background-image: none;
+}
